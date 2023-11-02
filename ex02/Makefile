@@ -1,5 +1,5 @@
-NAME =
-SRC =
+NAME = a.out
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJDIR = obj
 OBJS = $(addprefix $(OBJDIR)/, $(SRC:%.cpp=%.o))
 CXX = c++
