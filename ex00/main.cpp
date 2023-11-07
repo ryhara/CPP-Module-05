@@ -13,7 +13,7 @@ int main(void)
 			bureaucrat3 = bureaucrat2;
 			std::cout << bureaucrat3 << std::endl;
 		} catch (std::exception &e) {
-			std::cout  << RED << e.what() << END << std::endl;
+			std::cerr << RED << e.what() << END << std::endl;
 		}
 	}
 	std::cout << "-------------------------------------------"	<< std::endl << std::endl;
@@ -28,7 +28,7 @@ int main(void)
 				std::cout << GREEN << "Count: " << i << " Decrementing grade" << END << std::endl;
 			}
 		} catch (std::exception &e) {
-			std::cout  << RED << e.what() << END << std::endl;
+			std::cerr << RED << e.what() << END << std::endl;
 		}
 	}
 	std::cout << "-------------------------------------------"	<< std::endl << std::endl;
@@ -43,7 +43,7 @@ int main(void)
 				std::cout << GREEN << "Count: " << i << " Incrementing grade" << END << std::endl;
 			}
 		} catch (std::exception &e) {
-			std::cout  << RED << e.what() << END << std::endl;
+			std::cerr << RED << e.what() << END << std::endl;
 		}
 	}
 	std::cout << "-------------------------------------------"	<< std::endl << std::endl;
@@ -52,7 +52,7 @@ int main(void)
 			std::cout << BOLD << "Creating a Bureaucrat with grade 0" << END << std::endl;
 			Bureaucrat bureaucrat("Bureaucrat0", 0);
 		} catch (std::exception &e) {
-			std::cout  << RED << e.what() << END << std::endl;
+			std::cerr << RED << e.what() << END << std::endl;
 		}
 	}
 	std::cout << "-------------------------------------------"	<< std::endl << std::endl;
@@ -61,7 +61,7 @@ int main(void)
 			std::cout << BOLD << "Creating a Bureaucrat with grade 151" << END << std::endl;
 			Bureaucrat bureaucrat("Bureaucrat151", 151);
 		} catch (std::exception &e) {
-			std::cout  << RED << e.what() << END << std::endl;
+			std::cerr << RED << e.what() << END << std::endl;
 		}
 	}
 	std::cout << "-------------------------------------------"	<< std::endl << std::endl;
