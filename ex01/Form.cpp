@@ -19,10 +19,9 @@ Form::~Form()
 	std::cout << "Form destructor called" << std::endl;
 }
 
-Form::Form(Form const &copy)
+Form::Form(Form const &copy) : _name(copy.getName()), _signed(copy.getSigned()), _gradeToSign(copy.getGradeToSign()), _gradeToExecute(copy.getGradeToExecute())
 {
 	std::cout << "Form copy constructor called" << std::endl;
-	*this = copy;
 }
 
 Form &Form::operator=(Form const &copy)

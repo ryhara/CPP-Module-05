@@ -4,7 +4,7 @@
 
 int main(void)
 {
-	std::cout << "-----------------------------------------" << std::endl;
+	std::cout << "----------------------------------------------------------------------------------" << std::endl;
 	{
 		try {
 			std::cout << BOLD << "Creating a Form with default" << END << std::endl;
@@ -19,34 +19,44 @@ int main(void)
 			std::cerr << RED << e.what() << END <<std::endl;
 		}
 	}
-	std::cout << "-----------------------------------------" << std::endl;
+	std::cout << "----------------------------------------------------------------------------------" << std::endl;
 	{
 		try {
-
+			std::cout << BOLD << "Grade equal" << END << std::endl;
+			Form form("form", 1, 1);
+			std::cout << form << std::endl;
+			Bureaucrat bureaucrat("bureaucrat", 1);
+			std::cout << bureaucrat << std::endl;
+			bureaucrat.signForm(form);
+			std::cout << form << std::endl;
+		}  catch (std::exception &e) {
+			std::cerr << RED << e.what() << END <<std::endl;
+		}
+	}
+	std::cout << "----------------------------------------------------------------------------------" << std::endl;
+	{
+		try {
+			std::cout << BOLD << "Grade too low" << END << std::endl;
+			Form form("form", 1, 1);
+			std::cout << form << std::endl;
+			Bureaucrat bureaucrat("bureaucrat", 2);
+			std::cout << bureaucrat << std::endl;
+			bureaucrat.signForm(form);
+			std::cout << form << std::endl;
 		} catch (std::exception &e) {
 			std::cerr << RED << e.what() << END <<std::endl;
 		}
 	}
-	std::cout << "-----------------------------------------" << std::endl;
+	std::cout << "----------------------------------------------------------------------------------" << std::endl;
 	{
 		try {
-
-		} catch (std::exception &e) {
-			std::cerr << RED << e.what() << END <<std::endl;
-		}
-	}
-	std::cout << "-----------------------------------------" << std::endl;
-	{
-		try {
-
-		} catch (std::exception &e) {
-			std::cerr << RED << e.what() << END <<std::endl;
-		}
-	}
-	std::cout << "-----------------------------------------" << std::endl;
-	{
-		try {
-
+			std::cout << BOLD << "Grade too low" << END << std::endl;
+			Form form("form", 150, 150);
+			std::cout << form << std::endl;
+			Bureaucrat bureaucrat("bureaucrat", 2);
+			std::cout << bureaucrat << std::endl;
+			bureaucrat.signForm(form);
+			std::cout << form << std::endl;
 		} catch (std::exception &e) {
 			std::cerr << RED << e.what() << END <<std::endl;
 		}

@@ -19,10 +19,9 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Bureaucrat destructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &copy)
+Bureaucrat::Bureaucrat(Bureaucrat const &copy) : _name(copy.getName()), _grade(copy.getGrade())
 {
 	std::cout << "Bureaucrat copy constructor called" << std::endl;
-	*this = copy;
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &copy)

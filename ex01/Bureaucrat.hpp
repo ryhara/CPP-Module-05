@@ -37,7 +37,7 @@ class Bureaucrat
 		int					getGrade() const;
 		void				incrementGrade();
 		void				decrementGrade();
-		void				signForm(Form const &form) const;
+		void				signForm(Form &form);
 
 		class GradeTooHighException : public std::exception
 		{
