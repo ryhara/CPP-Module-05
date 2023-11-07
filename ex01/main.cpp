@@ -4,6 +4,7 @@
 
 int main(void)
 {
+	std::cout << "-----------------------------------------" << std::endl;
 	{
 		try {
 			std::cout << BOLD << "Creating a Form with default" << END << std::endl;
