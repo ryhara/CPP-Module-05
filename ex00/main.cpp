@@ -9,8 +9,7 @@ int main(void)
 			std::cout << bureaucrat << std::endl;
 			Bureaucrat bureaucrat2(bureaucrat);
 			std::cout << bureaucrat2 << std::endl;
-			Bureaucrat bureaucrat3;
-			bureaucrat3 = bureaucrat2;
+			Bureaucrat bureaucrat3(bureaucrat2);
 			std::cout << bureaucrat3 << std::endl;
 		} catch (std::exception &e) {
 			std::cerr << RED << e.what() << END << std::endl;

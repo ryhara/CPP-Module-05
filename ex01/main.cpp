@@ -12,8 +12,7 @@ int main(void)
 			std::cout << form << std::endl;
 			Form form2(form);
 			std::cout << form2 << std::endl;
-			Form form3;
-			form3 = form2;
+			Form form3(form2);
 			std::cout << form3 << std::endl;
 		} catch (std::exception &e) {
 			std::cerr << RED << e.what() << END <<std::endl;
