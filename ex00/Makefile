@@ -1,7 +1,10 @@
 NAME = a.out
 SRC = main.cpp Bureaucrat.cpp
-OBJDIR = obj
-OBJS = $(addprefix $(OBJDIR)/, $(SRC:%.cpp=%.o))
+SRCDIR = ./srcs/
+SRCS = $(addprefix $(SRCDIR), $(SRC))
+OBJDIR = ./obj/
+OBJS = $(addprefix $(OBJDIR), $(SRC:%.cpp=%.o))
+INC = -I ./includes/
 CXX = c++
 RM = rm -rf
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -14,8 +17,8 @@ $(NAME): $(OBJS)
 $(OBJDIR):
 	mkdir -p $(OBJDIR)
 
-$(OBJDIR)/%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -o $@ -c $<
+$(OBJDIR)%.o: $(SRCDIR)%.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INC)
 
 clean :
 	$(RM) $(OBJDIR)
