@@ -20,7 +20,7 @@
 #define UNDERLINE		"\033[4m"
 #define BOLD_UNDERLINE	"\033[1;4m"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
