@@ -7,6 +7,9 @@
 
 #include "AForm.hpp"
 
+// 25 grade to sign
+// 5 grade to execute
+// Informs that <target> has been pardoned by Zaphod Beeblebrox.
 class PresidentialPardonForm : public AForm
 {
 	private:

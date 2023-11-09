@@ -8,6 +8,9 @@
 
 #include "AForm.hpp"
 
+// 145 grade to sign
+// 137 grade to execute
+// Create a file <target>_shrubbery in the working directory, and writes ASCII trees inside it.
 class ShrubberyCreationForm : public AForm
 {
 	private:

@@ -7,6 +7,10 @@
 
 #include "AForm.hpp"
 
+
+// 72 grade to sign
+// 45 grade to execute
+// Makes some drilling noises. Then, informs that <target> has been robotomized successfully 50% of the time. Otherwise, informs that the robotomy failed.
 class RobotomyRequestForm : public AForm
 {
 	private:
