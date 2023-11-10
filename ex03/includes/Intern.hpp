@@ -19,12 +19,9 @@ class Intern
 		Intern &operator=(Intern const &copy);
 
 		AForm *makeForm(std::string const &formName, std::string const &target) const;
-
-		class FormNotFoundException : public std::exception
-		{
-			public:
-				virtual const char *what() const throw();
-		};
+		AForm *makeRobotomyRequestForm(std::string const &target) const;
+		AForm *makePresidentialPardonForm(std::string const &target) const;
+		AForm *makeShrubberyCreationForm(std::string const &target) const;
 };
 
 

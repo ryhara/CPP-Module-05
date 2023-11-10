@@ -23,41 +23,36 @@ Intern &Intern::operator=(Intern const &copy)
 	return (*this);
 }
 
-const char *Intern::FormNotFoundException::what() const throw()
+AForm *Intern::makeRobotomyRequestForm(std::string const &target) const
 {
-	return ("Form not found");
+	return (new RobotomyRequestForm(target));
+}
+
+AForm *Intern::makePresidentialPardonForm(std::string const &target) const
+{
+	return (new PresidentialPardonForm(target));
+}
+
+AForm *Intern::makeShrubberyCreationForm(std::string const &target) const
+{
+	return (new ShrubberyCreationForm(target));
 }
 
 AForm *Intern::makeForm(std::string const &formName, std::string const &target) const
 {
 	int	i;
 	AForm *form = NULL;
-	std::string formNames[3] = {"presidential pardon", "robotomy request", "shrubbery creation"};
-	for (i = 0; i < 3 && formName != formNames[i]; i++)
-		;
+	std::string formNames[3] = {"robotomy request", "presidential pardon", "shrubbery creation"};
+	AForm *(Intern::*const formCreators[3])(std::string const &target) const = {&Intern::makeRobotomyRequestForm, &Intern::makePresidentialPardonForm, &Intern::makeShrubberyCreationForm};
 
-	try {
-		switch (i) {
-			case 0:
-				form = new PresidentialPardonForm(target);
-				std::cout << GREEN << "Intern creates " << formName << " form" << END << std::endl;
-				break;
-			case 1:
-				form = new RobotomyRequestForm(target);
-				std::cout << GREEN << "Intern creates " << formName << " form" << END << std::endl;
-				break;
-			case 2:
-				form = new ShrubberyCreationForm(target);
-				std::cout << GREEN << "Intern creates " << formName << " form" << END << std::endl;
-				break;
-			default:
-				throw Intern::FormNotFoundException();
-
-		}
-	} catch (const std::bad_alloc &e) {
-		std::cerr << RED << e.what() << END <<std::endl;
-	} catch (std::exception &e) {
-		std::cerr << RED << e.what() << END <<std::endl;
+	for (i = 0; i < 3; i++) {
+		form = ((formName == formNames[i]) ? (this->*formCreators[i])(target) : NULL);
+		if (form)
+			break ;
 	}
+	if (!form)
+		std::cout << RED << "Form not found" << END << std::endl;
+	else
+		std::cout << GREEN <<  "Intern creates " << formName << END << std::endl;
 	return (form);
 }

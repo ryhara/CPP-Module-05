@@ -17,6 +17,7 @@ int main(void)
 		if (form)
 		{
 			std::cout << *form << std::endl;
+			form->beSigned(Bureaucrat("bureaucrat", 1));
 			delete form;
 		}
 	}
@@ -28,6 +29,7 @@ int main(void)
 		if (form)
 		{
 			std::cout << *form << std::endl;
+			form->beSigned(Bureaucrat("bureaucrat", 1));
 			delete form;
 		}
 	}
