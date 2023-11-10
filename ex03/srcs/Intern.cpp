@@ -45,10 +45,8 @@ AForm *Intern::makeForm(std::string const &formName, std::string const &target) 
 	std::string formNames[3] = {"robotomy request", "presidential pardon", "shrubbery creation"};
 	AForm *(Intern::*const formCreators[3])(std::string const &target) const = {&Intern::makeRobotomyRequestForm, &Intern::makePresidentialPardonForm, &Intern::makeShrubberyCreationForm};
 
-	for (i = 0; i < 3; i++) {
+	for (i = 0; i < 3 && !form; i++) {
 		form = ((formName == formNames[i]) ? (this->*formCreators[i])(target) : NULL);
-		if (form)
-			break ;
 	}
 	if (!form)
 		std::cout << RED << "Form not found" << END << std::endl;
